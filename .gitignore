@@ -1,0 +1,14 @@
+# Python / Flask Backend
+backend_ML/venv/
+backend_ML/__pycache__/
+backend_ML/.env
+*.pyc
+
+# React Frontend
+frontend_ML/node_modules/
+frontend_ML/dist/
+frontend_ML/.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
