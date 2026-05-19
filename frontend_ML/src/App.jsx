@@ -22,7 +22,8 @@ function App() {
     setLoading(true);
     
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/predict');
+      // Ubah bagian ini:
+      const response = await fetch('https://chicknug19-aol-ml.hf.space/api/predict');
       const data = await response.json();
 
       if (data.status === 'success') {
