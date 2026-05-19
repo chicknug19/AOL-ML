@@ -26,5 +26,5 @@ jobs:
           git add .
           git commit -m "Deploy: Sinkronisasi otomatis dari GitHub Actions"
           
-          # Menggunakan variabel $HF_TOKEN dari env block di atas
-          git push --force https://chicknug19:${HF_TOKEN}@huggingface.co/spaces/chicknug19/aol-ml main
+          # Memperbaiki alamat tujuan menggunakan nama space asli: aol_ml
+          git push --force https://chicknug19:${HF_TOKEN}@huggingface.co/spaces/chicknug19/aol_ml main
