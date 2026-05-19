@@ -67,7 +67,7 @@ def predict():
         # 4. Ambil HANYA baris pasar paling terakhir (Hari Ini)
         latest_data = df.iloc[-1:]
         
-        features = ['open', 'high', 'low', 'close', 'volume', 
+        features = ['open', 'high', 'low', 'close', 
                     'EMA_21', 'EMA_99', 'EMA_200', 'RSI_14', 'Stoch_K',
                     'MACD', 'Signal_Line', 'Upper_BB', 'Lower_BB', 'Daily_Return']
         
