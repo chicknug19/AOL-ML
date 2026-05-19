@@ -15,7 +15,7 @@ jobs:
 
       - name: Push Subfolder Backend ke Hugging Face
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
         run: |
           # Masuk ke folder backend
           cd backend_ML
