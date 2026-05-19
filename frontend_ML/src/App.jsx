@@ -23,7 +23,7 @@ function App() {
     
     try {
       // Ubah bagian ini:
-      const response = await fetch('https://chicknug19-aol-ml.hf.space/api/predict');
+      const response = await fetch('https://chicknug19-aol_ml.hf.space/api/predict');
       const data = await response.json();
 
       if (data.status === 'success') {
