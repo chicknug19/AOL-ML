@@ -14,6 +14,8 @@ jobs:
           fetch-depth: 0
 
       - name: Push Subfolder Backend ke Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
         run: |
           cd backend_ML
           
@@ -24,5 +26,5 @@ jobs:
           git add .
           git commit -m "Deploy: Sinkronisasi otomatis dari GitHub Actions"
           
-          # Kita sisipkan token langsung menggunakan format pemanggilan bawaan GitHub
-          git push --force https://chicknug19:${{ secrets.HUGGINGFACE_TOKEN }}@huggingface.co/spaces/chicknug19/aol-ml main
+          # Menggunakan variabel $HF_TOKEN dari env block di atas
+          git push --force https://chicknug19:${HF_TOKEN}@huggingface.co/spaces/chicknug19/aol-ml main
