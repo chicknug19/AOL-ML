@@ -53,7 +53,7 @@ function App() {
             <h2 className="text-xl font-semibold mb-4 text-slate-700">Data Input Simulation</h2>
             <p className="text-xs text-slate-400 mb-4">*Catatan: Saat tombol diklik, backend otomatis mengambil baris pasar terupdate dari dataset bersih.</p>
             <form onSubmit={handleSubmit} className="space-y-4">
-              {['open', 'high', 'low', 'close', 'volume'].map((field) => (
+              {['open', 'high', 'low', 'close'].map((field) => (
                 <div key={field}>
                   <label className="block text-sm font-medium text-slate-600 capitalize mb-1">
                     {field} Price {field === 'volume' ? '' : '(IDR)'}

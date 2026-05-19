@@ -1,0 +1,34 @@
+name: Sync to Hugging Face Space
+
+on:
+  push:
+    branches: [radianda, main] # Otomatis jalan saat push ke branch ini
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Push Subfolder Backend ke Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # Masuk ke folder backend
+          cd backend_ML
+          
+          # Mengatur konfigurasi identitas git sementara di server github
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          
+          # Menginisialisasi repositori git baru khusus di subfolder backend_ML
+          git init -b main
+          git add .
+          git commit -m "Deploy: Sinkronisasi otomatis dari GitHub Actions"
+          
+          # Memaksa push ke repositori Hugging Face Space Anda
+          # Ganti [username_anda] dan [nama_space_anda] sesuai akun Hugging Face Anda
+          git push --force https://chicknug19:$HF_TOKEN@huggingface.co/spaces/chicknug19/aol-ml main
